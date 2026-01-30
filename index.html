@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LinkMate</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/DrawSVGPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollSmoother.min.js"></script>
+
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -40,8 +47,9 @@
                     </h3>
                     <p>
                         <img src="./image/answer.png" alt="">
-                        <span>빠른 매칭과 즉각적인 결과를 요구하는<br> 환경은 관계를 <span style="color: #C84766;">"과정"</span>이 아닌<span
-                                style="color: #C84766;">"결과"</span>로 소비하게 만듭니다.</span>
+                        <span>빠른 매칭과 즉각적인 결과를 요구하는<br> 환경은 관계를 <span style="color: #C84766;"
+                                class="highlight">"과정"</span>이 아닌<span style="color: #C84766;"
+                                class="highlight">"결과"</span>로 소비하게 만듭니다.</span>
                     </p>
                 </div>
                 <div class="why_box">
@@ -50,16 +58,18 @@
                     </h3>
                     <p>
                         <img src="./image/answer.png" alt="">
-                        <span>빠른 선택과 즉각적인 반응속에서<br>사람은 점점 <span style="color: #C84766;">"조건"</span>으로 분류되고 있습니다.</span>
+                        <span>빠른 선택과 즉각적인 반응속에서<br>사람은 점점 <span style="color: #C84766;" class="highlight">"조건"</span>으로
+                            분류되고 있습니다.</span>
                     </p>
                 </div>
                 <div class="why_box">
                     <h3>
-                        <img src="./image/question.png" alt="">만남은 쉬워졌지만<br>왜 이해는 부족해졌을까요?
+                        <img src="./image/question.png" alt="">만남은 쉬워졌지만,<br>왜 이해는 부족해졌을까요?
                     </h3>
                     <p>
                         <img src="./image/answer.png" alt="">
-                        <span>사진과 몇개의 정보만으로사람을<br>판단하는 구조는 관계를 <span style="color: #C84766;">"단순"</span>하게 만듭니다.</span>
+                        <span>사진과 몇개의 정보만으로사람을<br>판단하는 구조는 관계를 <span style="color: #C84766;"
+                                class="highlight">"단순"</span>하게 만듭니다.</span>
                     </p>
                 </div>
                 <div class="why_box">
@@ -68,7 +78,8 @@
                     </h3>
                     <p>
                         <img src="./image/answer.png" alt="">
-                        <span>텍스트보다 우리에겐 서로의 결을 읽어낼 수 있는 깊은 호흡의 <span style="color: #C84766;">"시간"</span>이필요합니다</span>
+                        <span>텍스트보다 우리에겐 서로의 결을 읽어낼 수 있는 깊은 호흡의 <span style="color: #C84766;"
+                                class="highlight">"시간"</span>이필요합니다</span>
                 </div>
             </div><!--end:.why-->
 
@@ -80,11 +91,11 @@
                 <div class="mate_box">
                     <div class="mate_top">
                         <p>무작위가 아닌,<br><span>기준 있는 연결</span>을<br><span>설계</span>합니다.</p>
-                        <img src="./image/Mask group1.png" alt="">
+                        <img class="image" src="./image/Mask group1.png" alt="">
                     </div><!--end:.mate_top-->
                     <div class="mate_bottom">
                         <p>관계의 속도에 맞춘<br><span>안전한 대화 환경</span>을<br>제공합니다.</p>
-                        <img src="./image/Mask group2.png" alt="">
+                        <img class="image" src="./image/Mask group2.png" alt="">
                     </div><!--end:.mate_bottom-->
                 </div><!--end:.mate_box-->
             </div><!--end:.mate-->
@@ -132,7 +143,16 @@
                 <div class="process_step1">
                     <div class="step_text1">
                         <h3>Step 01.<span>탐색</span>:</h3>
-                        <img src="./image/line.png" alt="">
+                        <svg class="arrow_svg" width="43" height="67" viewBox="0 0 43 67" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path class="draw_line"
+                                d="M5.0001 0.433594C5.0001 0.433594 -7.64165 26.6366 12.0169 37.2681C31.6754 47.8995 34.8068 43.6527 37.9382 42.1794C41.0697 40.706 47.2456 30.999 29.8487 24.7588C12.4518 18.5186 -3.55338 38.3948 12.1618 52.0308C27.877 65.6668 38.0542 65.7535 38.0542 65.7535"
+                                stroke="black" stroke-width="2" stroke-miterlimit="10" />
+                        </svg>
+                        <svg class="arrow_head" width="20" height="23" viewBox="0 0 20 23" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 11.5L0 0V23L20 11.5Z" fill="black" />
+                        </svg>
                         <p>직접적인 노출을 최소화 하기 위해<br>먼저 서로의 <span>가치관 카드</span> 확인!</p>
                     </div><!--end:.step_text-->
                     <div class="step_img1">
@@ -143,15 +163,42 @@
                 <div class="process_step2">
                     <div class="step_text2">
                         <h3>Step 02.<span>대화</span>:</h3>
-                        <img src="./image/line.png" alt="">
+                        <svg class="arrow_svg" width="43" height="67" viewBox="0 0 43 67" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path class="draw_line"
+                                d="M5.0001 0.433594C5.0001 0.433594 -7.64165 26.6366 12.0169 37.2681C31.6754 47.8995 34.8068 43.6527 37.9382 42.1794C41.0697 40.706 47.2456 30.999 29.8487 24.7588C12.4518 18.5186 -3.55338 38.3948 12.1618 52.0308C27.877 65.6668 38.0542 65.7535 38.0542 65.7535"
+                                stroke="black" stroke-width="2" stroke-miterlimit="10" />
+                        </svg>
+                        <svg class="arrow_head" width="20" height="23" viewBox="0 0 20 23" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 11.5L0 0V23L20 11.5Z" fill="black" />
+                        </svg>
                         <p>바로 만나는게 아닌,<br>서비스 내 <span>보호된 환경</span>에서 <br>충분히 <span>대화</span>먼저 해보세요!</p>
                     </div><!--end:.step_text2-->
                     <div class="step_img2">
-                        <img src="./image/card3.png" alt="">
-                        <img src="./image/dotlinesmall.png" alt="">
-                        <img src="./image/card4.png" alt="">
-                        <img src="./image/dotlinebig.png" alt="">
-                        <img src="./image/talk.png" alt="">
+                        <img class="bg_card1" src="./image/card3.png" alt="">
+                        <svg class="heart_svg" width="183" height="139" viewBox="0 0 183 139" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <mask id="line-mask">
+                                    <path class="mask_path"
+                                        d="M24 129C61 122 127.5 97.4999 97.5 55.4999C60 2.99995 19 22.4999 31 55.4999C43 88.4999 143 79 167.5 23"
+                                        fill="none" stroke="white" stroke-width="5" />
+                                </mask>
+                            </defs>
+                            <path class="heart_1"
+                                d="M2.62217 124.282C4.14114 123.631 5.94085 124.14 7.50596 125.458C9.06818 124.148 10.863 123.645 12.378 124.294C14.9965 125.417 15.7873 129.556 14.1437 133.539C12.7018 137.034 9.86534 139.246 7.42295 138.98C5.01642 139.139 2.26913 136.948 0.857522 133.527C-0.786091 129.544 0.0036685 125.405 2.62217 124.282Z"
+                                fill="#FE9A9A" />
+                            <path class="heart_2"
+                                d="M170.623 0.282337C172.142 -0.368518 173.942 0.139842 175.507 1.45812C177.069 0.148153 178.862 -0.355077 180.377 0.294056C182.996 1.41649 183.786 5.55548 182.142 9.53917C180.701 13.0318 177.868 15.2435 175.427 14.9796C173.019 15.1419 170.27 12.9513 168.857 9.52843C167.214 5.54474 168.004 1.40477 170.623 0.282337Z"
+                                fill="#FE9A9A" />
+                            <path class="heart_line"
+                                d="M24 129C61 122 127.5 97.4999 97.5 55.4999C60 2.99995 19 22.4999 31 55.4999C43 88.4999 143 79 167.5 23"
+                                stroke="black" stroke-width="2" stroke-dasharray="4 4" mask=url(#line-mask) />
+                        </svg>
+                        <img class="bg_card2" src="./image/card4.png" alt="">
+                        <img class="bg_card3" src="./image/dotlinebig.png" alt="">
+                        <img class="bg_card4" src="./image/talk.png" alt="">
                     </div><!--end:.step_img2-->
                 </div><!--end:.process_step2-->
             </div><!--end:.process-->
@@ -205,6 +252,321 @@
         </div><!--end:.bg-->
 
     </footer>
+
+
+
+
+
+
+
+    <script>
+        // use a script tag or an external JS file
+        document.addEventListener("DOMContentLoaded", (event) => {
+            gsap.registerPlugin(DrawSVGPlugin, ScrollTrigger, ScrollSmoother)
+            // gsap code here!
+
+
+            //-----------------------------화살표-----------------------------------------
+            // 1. step_text1과 step_text2를 모두 찾아서 리스트로 만듦
+            const arrowSteps = gsap.utils.toArray(".step_text1, .step_text2");
+
+            // 2. 찾은 박스들을 하나씩 돌면서 애니메이션 입히기 (이 반복문이 핵심!)
+            arrowSteps.forEach((step) => {
+                // 현재 순서의 박스(step) 안에서만 선이랑 머리 찾기
+                const line = step.querySelector(".draw_line");
+                const head = step.querySelector(".arrow_head");
+
+                if (line && head) {
+                    const pathLength = line.getTotalLength();
+
+                    // 초기 상태 세팅
+                    gsap.set(line, {
+                        strokeDasharray: pathLength,
+                        strokeDashoffset: pathLength
+                    });
+                    gsap.set(head, { opacity: 0 });
+
+                    // 애니메이션 실행
+                    gsap.to(line, {
+                        scrollTrigger: {
+                            trigger: step, // 👈 중요! .process_step1 대신 '현재 박스'를 기준으로!
+                            start: "top 80%",
+                            toggleActions: "play none none none"
+                        },
+                        strokeDashoffset: 0,
+                        duration: 1.5,
+                        ease: "power2.inOut",
+                        onComplete: () => {
+                            gsap.to(head, { opacity: 1, duration: 0.3 }); // 선 다 그려지면 머리 짠!
+                        }
+                    });
+                }
+            });
+
+
+            gsap.fromTo(".step_text1 p",
+                {
+                    y: 150,         // 150px 아래에서 출발
+                    opacity: 0      // 투명한 상태로 대기
+                },
+                {
+                    scrollTrigger: {
+                        trigger: ".step_text1", // safety_image 박스가 보일 때 시작
+                        start: "top 85%",        // 화면 85% 지점에 닿으면 실행
+                        toggleActions: "play none none reverse",
+                        markers: false           // 잘 작동하면 false, 확인하고 싶으면 true
+                    },
+                    y: 0,           // 원래 자리로
+                    opacity: 1,     // 선명하게 나타남
+                    duration: 1.5,    // 1초 동안 부드럽게
+                    delay: 1.5,
+                    ease: "power3.out",
+                    stagger: 0      // 0으로 설정해서 3개가 '동시에' 올라오게 함
+                }
+            );
+
+
+            gsap.fromTo(".step_text2 p",
+                {
+                    y: 150,         // 150px 아래에서 출발
+                    opacity: 0      // 투명한 상태로 대기
+                },
+                {
+                    scrollTrigger: {
+                        trigger: ".step_text2", // safety_image 박스가 보일 때 시작
+                        start: "top 85%",        // 화면 85% 지점에 닿으면 실행
+                        toggleActions: "play none none reverse",
+                        markers: false           // 잘 작동하면 false, 확인하고 싶으면 true
+                    },
+                    y: 0,           // 원래 자리로
+                    opacity: 1,     // 선명하게 나타남
+                    duration: 1.5,    // 1초 동안 부드럽게
+                    delay: 1.5,
+                    ease: "power3.out",
+                    stagger: 0      // 0으로 설정해서 3개가 '동시에' 올라오게 함
+                }
+            );
+
+
+
+            gsap.fromTo(".step_img1 img",
+                {
+                    y: 150,         // 150px 아래에서 출발
+                    opacity: 0      // 투명한 상태로 대기
+                },
+                {
+                    scrollTrigger: {
+                        trigger: ".step_text1", // safety_image 박스가 보일 때 시작
+                        start: "top 85%",        // 화면 85% 지점에 닿으면 실행
+                        toggleActions: "play none none reverse",
+                        markers: false           // 잘 작동하면 false, 확인하고 싶으면 true
+                    },
+                    y: 0,           // 원래 자리로
+                    opacity: 1,     // 선명하게 나타남
+                    duration: 1.5,    // 1초 동안 부드럽게
+                    delay: 2,
+                    ease: "power3.out",
+                    stagger: 0      // 0으로 설정해서 3개가 '동시에' 올라오게 함
+                }
+            );
+            // gsap.fromTo(".bg_card",
+            //     {
+            //         opacity: 0,
+            //         y: 50
+            //     },
+            //     {
+            //         scrollTrigger: {
+            //             trigger: ".process_step2", // 부모 박스가 보이면 시작
+            //             start: "top 70%",          // 조금 더 일찍 시작하게 조정
+            //             toggleActions: "play none none reverse"
+            //         },
+            //         opacity: 1,
+            //         y: 0,
+            //         duration: 0.5,
+            //         stagger: 0.8, // 0.3초 간격으로 하나씩!
+            //         delay: 2.5,
+            //     }
+            // );
+
+
+            const maskPath = document.querySelector(".mask_path");
+            const pathLength = maskPath.getTotalLength();
+
+            // 초기 세팅
+            gsap.set(maskPath, { strokeDasharray: pathLength, strokeDashoffset: pathLength });
+
+            const step2Tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".process_step2",
+                    start: "top 70%",
+                    toggleActions: "play none none reverse",
+                    markers: true,
+
+                }
+            });
+
+            // 순서: 하트1 -> 하트2 -> 점선 주르륵 -> 카드
+
+            step2Tl.fromTo(".bg_card1", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, delay: 3, });
+            step2Tl.fromTo(".bg_card2", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, });
+
+            step2Tl.from(".heart_1", { scale: 0, opacity: 0, duration: 0.5, ease: "back.out(1.7)" });
+            step2Tl.from(".heart_2", { scale: 0, opacity: 0, duration: 0.4, ease: "back.out(1.7)" }); // 이제 잘 보일 거야!
+            step2Tl.to(maskPath, { strokeDashoffset: 0, duration: 1.2, ease: "none" });
+            step2Tl.fromTo(".bg_card3", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, });
+            step2Tl.fromTo(".bg_card4", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, });
+
+
+
+            //-------------------------------------------------------------------------------------------------------------------
+            gsap.from(".standard_card img", {
+                scrollTrigger: {
+                    trigger: ".standard_card",
+                    start: "top 80%",
+                    toggleActions: "play none none reverse",
+                },
+                y: 60,
+                opacity: 0,
+                duration: 1,
+                ease: "power2.out",
+                stagger: 0.2
+            });
+
+            gsap.fromTo(".mate_box p",
+                {
+                    y: 150,      // 출발지점: 150px 아래 (더 아래를 원하면 숫자를 키워!)
+                    opacity: 0   // 출발상태: 완전 투명
+                },
+                {
+                    scrollTrigger: {
+                        trigger: ".mate_box", // 기준점: 이 박스가 보이면 시작
+                        start: "top 30%",     // 화면의 85% 지점에 닿으면 실행
+                        // 확인용 가이드라인 (잘 되면 나중에 삭제)
+                        toggleActions: "play none none reverse"
+                    },
+                    y: 0,           // 도착지점: 원래 자리
+                    opacity: 1,     // 도착상태: 완전 선명
+                    duration: 2,    // 올라오는 시간 (1초 동안 묵직하게)
+                    ease: "power3.out", // 세련되게 속도가 줄어드는 가속도
+                    stagger: 0      // 0으로 두면 글자들이 '동시에' 올라와!
+                }
+            );
+
+
+            gsap.fromTo(".mate_top .image",
+                {
+                    x: 100,      // 왼쪽(-100px)에서 출발
+                    opacity: 0
+                },
+                {
+                    scrollTrigger: {
+                        trigger: ".mate_box",
+                        start: "top 30%",
+                        toggleActions: "play none none reverse"
+                    },
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power3.out",
+                    delay: 0.5,
+                }
+            );
+
+            // 2. 오른쪽 사진 (오른쪽 -> 왼쪽으로)
+            gsap.fromTo(".mate_bottom .image",
+                {
+                    x: -100,       // 오른쪽(100px)에서 출발
+                    opacity: 0
+                },
+                {
+                    scrollTrigger: {
+                        trigger: ".mate_box",
+                        start: "top 30%",
+                        toggleActions: "play none none reverse"
+                    },
+                    x: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power3.out",
+                    delay: 0.5,
+                }
+            );
+            //------------------------------------------------------------------------------------------------------------------------
+            gsap.fromTo(".safety_image img",
+                {
+                    y: 150,         // 150px 아래에서 출발
+                    opacity: 0      // 투명한 상태로 대기
+                },
+                {
+                    scrollTrigger: {
+                        trigger: ".safety_image", // safety_image 박스가 보일 때 시작
+                        start: "top 85%",        // 화면 85% 지점에 닿으면 실행
+                        toggleActions: "play none none reverse",
+                        markers: false           // 잘 작동하면 false, 확인하고 싶으면 true
+                    },
+                    y: 0,           // 원래 자리로
+                    opacity: 1,     // 선명하게 나타남
+                    duration: 2,    // 1초 동안 부드럽게
+                    ease: "power3.out",
+                    stagger: 0      // 0으로 설정해서 3개가 '동시에' 올라오게 함
+                }
+            );
+
+            //-------------------------------------------------------------------------------------------------------------------
+            gsap.registerPlugin(ScrollTrigger);
+
+            const whyTL = gsap.timeline({
+                scrollTrigger: {
+                    trigger: ".why",
+                    start: "top 75%",
+                    toggleActions: "play none none reverse",
+                }
+            });
+
+            // (선택) 섹션 전체 살짝 페이드
+            whyTL.from(".why", {
+                opacity: 0,
+                duration: 0.35,
+                ease: "power1.out"
+            }, 0);
+
+            // ✅ 1) 질문 4개(h3) "한번에" 등장
+            whyTL.from(".why_box h3", {
+                y: 16,
+                opacity: 0,
+                duration: 0.9,
+                ease: "power2.out"
+            }, 0.05);
+
+            // ✅ 2) 답변 4개(p) "그 다음에" 한번에 등장
+            whyTL.from(".why_box p", {
+                y: 12,
+                opacity: 0,
+                duration: 1.1,
+                ease: "power2.out"
+            }, ">0.15"); // 질문 끝난 뒤 0.15s 쉬고 시작
+
+
+            whyTL.from(".why_box .highlight", {
+                opacity: 0,
+                y: 6,
+                duration: 0.35,
+                ease: "power2.out"
+            }, ">0.1");
+
+            whyTL.fromTo(".why_box .highlight",
+                { opacity: 1, y: 0, duration: 0.35, ease: "power2.out", immediateRender: false },
+                ">0.1"
+            );
+
+
+
+
+
+
+        });
+
+    </script>
 </body>
 
 </html>

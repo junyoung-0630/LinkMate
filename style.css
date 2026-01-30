@@ -142,6 +142,7 @@ main {
   width: 1100px;
   margin: 0 auto;
   /*-------------------------------------------mate-------------------------------------------------------------*/
+  /*--------------------------------standard------------------------------------------------------------------------------------------------------------*/
 }
 .inner h2 {
   background: url(./image/underlinered.png) no-repeat left bottom;
@@ -231,6 +232,9 @@ main {
 .inner .text h2 span {
   color: #5AB0B9;
 }
+.inner .highlight {
+  display: inline-block;
+}
 .inner .mate {
   margin-bottom: 150px;
 }
@@ -246,6 +250,9 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 .inner .mate_top {
   justify-content: center;
@@ -253,17 +260,20 @@ main {
   position: relative;
   z-index: 0;
   background: radial-gradient(circle, rgba(255, 192, 203, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
-  pointer-events: none;
 }
 .inner .mate_top span {
   color: #FD5757;
   font-weight: bold;
 }
 .inner .mate_top img {
-  transform: all 0.3s ease;
+  transition: all 0.3s;
+}
+.inner .mate_top .image {
+  overflow: hidden;
+  transition: all 0.3s;
 }
 .inner .mate_top img:hover {
-  transition: scale(1.1);
+  transform: scale(1.05);
   cursor: pointer;
 }
 .inner .mate_bottom {
@@ -273,11 +283,21 @@ main {
   position: relative;
   z-index: 0;
   background: radial-gradient(circle, rgba(71, 69, 179, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
-  pointer-events: none;
 }
 .inner .mate_bottom span {
   color: #6779D4;
   font-weight: bold;
+}
+.inner .mate_bottom img {
+  transition: all 0.3s;
+}
+.inner .mate_bottom .image {
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.inner .mate_bottom img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 .inner .standard {
   width: 100%;
@@ -374,23 +394,36 @@ main {
 .inner .process_step1 .step_text1 {
   flex: 1;
   text-align: left;
+  position: relative;
 }
 .inner .process_step1 .step_text1 h3 {
-  margin-left: 100px;
-}
-.inner .process_step1 .step_text1 img {
-  margin-left: 150px;
-  margin-top: 10px;
+  margin-left: 50px;
 }
 .inner .process_step1 .step_text1 p {
   font-size: 19px;
-  margin-left: 215px;
+  margin-left: 165px;
   transform: translateY(-45px);
   transform: skewx(1deg);
 }
 .inner .process_step1 .step_text1 p span {
   color: #ED7575;
   background: none;
+}
+.inner .process_step1 .step_text1 svg {
+  margin-left: 100px;
+  margin-top: 10px;
+}
+.inner .process_step1 .arrow_head {
+  position: absolute !important;
+  top: 90px !important;
+  /* 일단 확 티나게 10px로 줘봐 */
+  left: 35px !important;
+  /* 일단 확 티나게 10px로 줘봐 */
+  width: 20px !important;
+  height: auto !important;
+  z-index: 999 !important;
+  display: block !important;
+  /* 혹시 안 보일까 봐 추가 */
 }
 .inner .process_step1 span {
   background: url(./image/underlinesky.png) no-repeat left bottom;
@@ -412,23 +445,40 @@ main {
 .inner .process_step2 .step_text2 {
   text-align: left;
   width: 800px;
+  position: relative;
 }
 .inner .process_step2 .step_text2 h3 {
-  margin-left: 100px;
+  margin-left: 50px;
 }
 .inner .process_step2 .step_text2 img {
-  margin-left: 150px;
+  margin-left: 100px;
   margin-top: 10px;
 }
 .inner .process_step2 .step_text2 p {
   font-size: 19px;
   transform: translateY(-45px);
-  margin-left: 220px;
+  margin-left: 170px;
   transform: skewx(1deg);
 }
 .inner .process_step2 .step_text2 p span {
   color: #A594F1;
   background: none;
+}
+.inner .process_step2 svg {
+  margin-left: 100px;
+  margin-top: 10px;
+}
+.inner .process_step2 .arrow_head {
+  position: absolute !important;
+  top: 90px !important;
+  /* 일단 확 티나게 10px로 줘봐 */
+  left: 35px !important;
+  /* 일단 확 티나게 10px로 줘봐 */
+  width: 20px !important;
+  height: auto !important;
+  z-index: 999 !important;
+  display: block !important;
+  /* 혹시 안 보일까 봐 추가 */
 }
 .inner .process_step2 .step_img2 {
   position: relative;
@@ -441,25 +491,37 @@ main {
   top: 0;
   left: 0;
 }
+.inner .process_step2 .heart_svg {
+  position: absolute;
+  top: 140px; /* 👈 카드 사이 적절한 높이로 조절 */
+  left: -150px; /* 👈 카드 사이 가로 위치 조절 */
+  width: 200px; /* 피그마에서 본 사이즈대로 */
+  z-index: 5;
+}
 .inner .process_step2 .step_img2 img:nth-child(1) {
   position: absolute;
-  transform: translate(-200px, 150px);
+  top: 150px;
+  left: -230px;
 }
 .inner .process_step2 .step_img2 img:nth-child(2) {
   position: absolute;
-  transform: translate(0px, 150px);
+  top: 140px;
+  left: -45px;
 }
 .inner .process_step2 .step_img2 img:nth-child(3) {
   position: absolute;
-  transform: translate(210px, -10px);
+  top: 5px;
+  left: 160px;
 }
 .inner .process_step2 .step_img2 img:nth-child(4) {
   position: absolute;
-  transform: translate(280px, 280px);
+  top: 285px;
+  left: 225px;
 }
 .inner .process_step2 .step_img2 img:nth-child(5) {
   position: absolute;
-  transform: translate(460px, 80px);
+  top: 75px;
+  left: 405px;
 }
 .inner .process_step2 span {
   background: url(./image/underlinepurple.png) no-repeat left bottom;
@@ -539,14 +601,14 @@ footer .bg {
   background: #FFF5F9;
 }
 footer ul {
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   transform: skewx(1deg);
   gap: 0 20px;
   list-style: none;
 }
 footer p {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 500;
   transform: skewx(1deg);
   display: flex;
