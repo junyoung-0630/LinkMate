@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkmate - 신청하기</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+
+        @font-face {
+            font-family: 'Ria';
+            src: url('./fonts/RiaSans-Regular.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+        *{
+            font-family: 'Ria';
+        }
+        :root {
+            --point-pink: #df7779;
+            --point-purple: #914be2;
+            --line-color: #e5e5e5;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            letter-spacing: -0.03em;
+            word-break: keep-all;
+        }
+        span{
+            transform: skewx(1deg);
+        }
+
+        /* 메인 페이지의 깔끔한 상단 바 느낌 */
+        nav {
+            border-bottom: 1px solid var(--line-color);
+        }
+
+        .step-content {
+            display: none;
+            opacity: 0;
+        }
+
+        .step-content.active {
+            display: block;
+        }
+
+        /* 프로그레스 바 - 너무 두껍지 않게 세련되게 */
+        .progress-container {
+            height: 2px;
+            background: #f0f0f0;
+            width: 100%;
+        }
+
+        .progress-inner {
+            height: 100%;
+            background: linear-gradient(90deg, var(--point-pink), var(--point-purple));
+            width: 33.3%;
+            transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        /* 폰트 강조 - 연필로 슥 그은듯한 느낌만 살짝 */
+        .sketch-underline {
+            position: relative;
+            z-index: 1;
+        }
+
+        .sketch-underline::after {
+            content: "";
+            position: absolute;
+            bottom: 4px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: #ec9494;
+            z-index: -1;
+            border-radius: 100px 20px 100px 10px / 10px 50px 10px 100px;
+            /* 여기서만 스케치 느낌 */
+        }
+
+        /* 인풋 - 깔끔한 실선형 */
+        .input-clean {
+            border-bottom: 1px solid var(--line-color);
+            padding: 12px 0;
+            transition: all 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .input-clean:focus {
+            outline: none;
+            border-color: var(--point-purple);
+        }
+
+        /* 선택 카드 - 메인 페이지 카드 곡률(부드러움) 반영 */
+        .option-card {
+            border: 1px solid var(--line-color);
+            border-radius: 16px;
+            padding: 24px 16px;
+            transition: all 0.2s;
+            background: #fff;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .option-card.selected {
+            border-color: var(--point-pink);
+            background-color: #fff9fc;
+            color: var(--point-pink);
+            transform: translateY(-2px);
+        }
+
+        /* 버튼 - 메인 페이지의 그라데이션 버튼 느낌 */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--point-pink), var(--point-purple));
+            color: white;
+            border-radius: 12px;
+            padding: 18px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            box-shadow: 0 10px 20px rgba(174, 99, 228, 0.2);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--line-color);
+            color: #999;
+            border-radius: 12px;
+            padding: 18px;
+            transition: all 0.2s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md z-50">
+        <div class="max-w-xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-bold text-xl tracking-tighter">
+                <img src="./image/site2logo.png" alt="">
+            </div>
+            <button onclick="location.href='index.html'" class="text-gray-400 hover:text-gray-900 transition-colors">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <div class="pt-32 max-w-lg mx-auto px-8 pb-20">
+
+        <!-- 프로그레스 섹션 -->
+        <div class="mb-16">
+            <div class="flex justify-between items-end mb-4">
+                <span id="step-title" class="text-[11px] font-bold uppercase tracking-widest text-gray-300">Section.
+                    01</span>
+                <span class="text-xs text-gray-400 font-medium"><span id="step-num"
+                        style="color: var(--point-pink);">1</span> / 3</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-inner" id="progress-bar"></div>
+            </div>
+        </div>
+
+        <form id="applyForm">
+            <!-- Step 1 -->
+            <div id="step1" class="step-content active">
+                <h2 class="text-2xl font-bold mb-3">당신에 대해<br><span class="sketch-underline">먼저 알려주세요.</span></h2>
+                <p class="text-gray-400 text-sm mb-12">인연을 찾는 알고리즘의 소중한 데이터가 됩니다.</p>
+
+                <div class="space-y-12">
+                    <div>
+                        <label
+                            class="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-2">Nickname</label>
+                        <input type="text" class="input-clean w-full" placeholder="어떻게 불러드릴까요?">
+                    </div>
+
+                    <div>
+                        <label
+                            class="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-4">Gender</label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <button type="button" class="option-card">
+                                <span class="text-2xl block mb-2">🙋‍♂️</span>
+                                <span class="font-medium">남성</span>
+                            </button>
+                            <button type="button" class="option-card">
+                                <span class="text-2xl block mb-2">🙋‍♀️</span>
+                                <span class="font-medium">여성</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider block mb-2">Birth
+                            Year</label>
+                        <input type="number" class="input-clean w-full" placeholder="태어난 연도를 숫자로 입력 (예: 1995)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div id="step2" class="step-content">
+                <h2 class="text-2xl font-bold mb-3">서로의 <span class="sketch-underline">가치관</span>을<br>확인해 볼까요?</h2>
+                <p class="text-gray-400 text-sm mb-10">중요하게 생각하는 키워드 3개이상 골라주세요.</p>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="option-card py-6 text-sm">#비흡연자</div>
+                    <div class="option-card py-6 text-sm">#야외데이트</div>
+                    <div class="option-card py-6 text-sm">#영화/팝콘</div>
+                    <div class="option-card py-6 text-sm">#카톡광</div>
+                    <div class="option-card py-6 text-sm">#집순이/집돌이</div>
+                    <div class="option-card py-6 text-sm">#술은적당히</div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div id="step3" class="step-content text-center pt-10">
+                <div class="mb-8 flex justify-center">
+                    <div class="w-20 h-20 rounded-full bg-pink-50 flex items-center justify-center">
+                        <svg class="w-10 h-10 text-pink-500" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </div>
+                </div>
+                <h2 class="text-2xl font-bold mb-4">신청이 접수되었어요!</h2>
+                <p class="text-gray-400 leading-relaxed mb-16">
+                    억지스러운 끼워맞추기가 아닌,<br>
+                    준영님과 닮은 인연을 매칭 중입니다.
+                </p>
+                <button type="button" onclick="location.href='index.html'"
+                    class="btn-primary w-full text-lg shadow-lg">메인으로 돌아가기</button>
+            </div>
+        </form>
+
+        <!-- 버튼 하단 -->
+        <div id="controls" class="mt-16 flex gap-3">
+            <button type="button" id="prevBtn"
+                class="hidden btn-secondary flex-1 font-bold text-xs uppercase tracking-widest">Back</button>
+            <button type="button" id="nextBtn" class="flex-[2] btn-primary text-sm uppercase tracking-widest">Next
+                Step</button>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        // 초기 등장 애니메이션 (깔끔하게 위로 쓱)
+        gsap.fromTo(".active", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 1, ease: "power3.out" });
+
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const progressBar = document.getElementById('progress-bar');
+        const stepNum = document.getElementById('step-num');
+        const stepTitle = document.getElementById('step-title');
+
+        // 카드 선택
+        document.querySelectorAll('.option-card').forEach(card => {
+            card.addEventListener('click', function () {
+                if (this.parentElement.classList.contains('grid-cols-2') && this.querySelector('span')) {
+                    this.parentElement.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+                }
+                this.classList.toggle('selected');
+                gsap.fromTo(this, { scale: 0.98 }, { scale: 1, duration: 0.3 });
+            });
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentStep < totalSteps) {
+                gsap.to(`#step${currentStep}`, {
+                    opacity: 0, y: -15, duration: 0.4, onComplete: () => {
+                        document.getElementById(`step${currentStep}`).classList.remove('active');
+                        currentStep++;
+
+                        const nextStep = document.getElementById(`step${currentStep}`);
+                        nextStep.classList.add('active');
+                        gsap.fromTo(`#step${currentStep}`, { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" });
+
+                        updateUI();
+                    }
+                });
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                gsap.to(`#step${currentStep}`, {
+                    opacity: 0, y: 15, duration: 0.4, onComplete: () => {
+                        document.getElementById(`step${currentStep}`).classList.remove('active');
+                        currentStep--;
+
+                        const prevStep = document.getElementById(`step${currentStep}`);
+                        prevStep.classList.add('active');
+                        gsap.fromTo(`#step${currentStep}`, { opacity: 0, y: -15 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" });
+
+                        updateUI();
+                    }
+                });
+            }
+        });
+
+        function updateUI() {
+            progressBar.style.width = (currentStep / totalSteps) * 100 + "%";
+            stepNum.innerText = currentStep;
+            stepTitle.innerText = "Section. 0" + currentStep;
+
+            if (currentStep === 1) {
+                prevBtn.classList.add('hidden');
+                nextBtn.innerText = "Next Step";
+            } else if (currentStep === 2) {
+                prevBtn.classList.remove('hidden');
+                nextBtn.innerText = "Complete";
+            } else if (currentStep === 3) {
+                document.getElementById('controls').classList.add('hidden');
+                stepTitle.innerText = "Finished";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -32,6 +32,10 @@
 
     <main>
         <div class="main_bg">
+            <video autoplay muted loop playsinline class="bg-video">
+                <source src="./image/시퀀스 01.mp4" type="video/mp4">
+                해당 브라우저는 비디오 태그를 지원하지 않습니다.
+            </video>
             <h1>“잘 맞는 사람,<br>억지로 만들지 않아요”</h1>
             <h3>"억지스러운 끼워맞추기가 아닌, 알고리즘이 찾아낸 높은 확률의 설렘."</h3>
         </div><!--end:.main_bg-->
@@ -196,8 +200,25 @@
                                 d="M24 129C61 122 127.5 97.4999 97.5 55.4999C60 2.99995 19 22.4999 31 55.4999C43 88.4999 143 79 167.5 23"
                                 stroke="black" stroke-width="2" stroke-dasharray="4 4" mask=url(#line-mask) />
                         </svg>
+
                         <img class="bg_card2" src="./image/card4.png" alt="">
-                        <img class="bg_card3" src="./image/dotlinebig.png" alt="">
+
+                        <svg class="heart2_svg" width="169" height="177" viewBox="0 0 169 177" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <mask id="big_mask">
+                                    <path class="mask_path2"
+                                        d="M1.1684 17.1117C-0.831595 59.7783 14.1684 132.312 90.1684 81.1117C185.168 17.1117 63.6685 -29.8883 49.1685 25.6117C34.6685 81.1117 55.1685 153.112 134.668 161.612"
+                                        fill="none" stroke="white" stroke-width="5" />
+                                </mask>
+                            </defs>
+                            <path class="heart_line1"
+                                d="M1.1684 17.1117C-0.831595 59.7783 14.1684 132.312 90.1684 81.1117C185.168 17.1117 63.6685 -29.8883 49.1685 25.6117C34.6685 81.1117 55.1685 153.112 134.668 161.612"
+                                stroke="black" stroke-width="2" stroke-dasharray="4 4" mask="url(#big_mask)" />
+                            <path class="heart_line2" d="M169 160L143.5 174.722L143.5 145.278L169 160Z"
+                                fill="#FE9A9A" />
+                        </svg>
+
                         <img class="bg_card4" src="./image/talk.png" alt="">
                     </div><!--end:.step_img2-->
                 </div><!--end:.process_step2-->
@@ -218,7 +239,7 @@
                             <img src="./image/matecard2.png" alt="">
                         </div>
                         <h2>"설계된 우연이 당신의 <span>일상</span>이 되도록"</h2>
-                        <p>"일상의 우연 시작하기"</p>
+                        <p><a href="http://127.0.0.1:3000/index2.html?serverWindowId=7572b0be-8a4c-4e27-aa28-ed20c770b2c9" style="text-decoration:none; color: inherit;"> "일상의 우연 시작하기"</a></p>
                     </div><!--end:.box_right-->
                 </div><!--end:.meet_box-->
             </div><!--end:.meet-->
@@ -334,7 +355,7 @@
                 {
                     scrollTrigger: {
                         trigger: ".step_text2", // safety_image 박스가 보일 때 시작
-                        start: "top 85%",        // 화면 85% 지점에 닿으면 실행
+                        start: "top 50%",        // 화면 85% 지점에 닿으면 실행
                         toggleActions: "play none none reverse",
                         markers: false           // 잘 작동하면 false, 확인하고 싶으면 true
                     },
@@ -393,28 +414,30 @@
             const pathLength = maskPath.getTotalLength();
 
             // 초기 세팅
-            gsap.set(maskPath, { strokeDasharray: pathLength, strokeDashoffset: pathLength });
+            gsap.set(".mask_path, .mask_path2", { strokeDasharray: 1500, strokeDashoffset: 1500 });
 
             const step2Tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".process_step2",
-                    start: "top 70%",
+                    start: "top 50%",
                     toggleActions: "play none none reverse",
-                    markers: true,
+                    markers: true
 
                 }
             });
 
+
             // 순서: 하트1 -> 하트2 -> 점선 주르륵 -> 카드
 
-            step2Tl.fromTo(".bg_card1", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, delay: 3, });
+            step2Tl.fromTo(".bg_card1", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, delay: 2.5, });
             step2Tl.fromTo(".bg_card2", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, });
 
-            step2Tl.from(".heart_1", { scale: 0, opacity: 0, duration: 0.5, ease: "back.out(1.7)" });
-            step2Tl.from(".heart_2", { scale: 0, opacity: 0, duration: 0.4, ease: "back.out(1.7)" }); // 이제 잘 보일 거야!
-            step2Tl.to(maskPath, { strokeDashoffset: 0, duration: 1.2, ease: "none" });
-            step2Tl.fromTo(".bg_card3", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, });
-            step2Tl.fromTo(".bg_card4", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, });
+            step2Tl.from(".heart_1", { scale: 0, opacity: 0, duration: 0.5, ease: "back.out(1.7)" }); //하트1
+            step2Tl.from(".heart_2", { scale: 0, opacity: 0, duration: 0.4, ease: "back.out(1.7)" }); //하트2
+            step2Tl.to(".mask_path", { strokeDashoffset: 0, duration: 2, ease: "none" },); //그려지는 점선1
+            step2Tl.to(".mask_path2", { strokeDashoffset: 0, duration: 2, ease: "none", }, "-=1"); //그려지는 점선2
+            step2Tl.from(".heart_line2", { opacity: 0, duration: 0.5, ease: "back.out(1.7)" }, "-=1") //삼각형이미지 
+            step2Tl.fromTo(".bg_card4", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.5, }, "-=0.5"); //톡 이미지
 
 
 

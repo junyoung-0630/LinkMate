@@ -23,6 +23,12 @@
   font-weight: 900;
   font-display: swap;
 }
+@font-face {
+  font-family: "Pretendard";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
 header {
   width: 100%;
   height: 162px;
@@ -106,7 +112,6 @@ main {
 }
 
 .main_bg {
-  background: url(./image/main_bg.png);
   width: 100%;
   height: 650px;
   position: relative;
@@ -119,6 +124,13 @@ main {
   text-align: center;
   margin-bottom: 150px;
 }
+.main_bg .bg-video {
+  width: 100%;
+  position: absolute;
+  height: 650px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .main_bg h1 {
   font-weight: 500;
   font-size: 55px;
@@ -127,6 +139,7 @@ main {
   padding-bottom: 150px;
   position: relative;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4509803922);
+  top: 200px;
 }
 .main_bg h3 {
   font-weight: 500;
@@ -136,6 +149,7 @@ main {
   position: relative;
   top: -80px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4509803922);
+  top: 110px;
 }
 
 .inner {
@@ -498,6 +512,13 @@ main {
   width: 200px; /* 피그마에서 본 사이즈대로 */
   z-index: 5;
 }
+.inner .process_step2 .heart2_svg {
+  position: absolute;
+  top: 270px; /* 👈 카드 사이 적절한 높이로 조절 */
+  left: 110px; /* 👈 카드 사이 가로 위치 조절 */
+  width: 200px; /* 피그마에서 본 사이즈대로 */
+  z-index: 5;
+}
 .inner .process_step2 .step_img2 img:nth-child(1) {
   position: absolute;
   top: 150px;
@@ -594,7 +615,7 @@ main {
 /*---------------------------------------------------footer----------------------------------------------------------------------------------*/
 footer {
   width: 100%;
-  height: 400px;
+  height: 350px;
 }
 footer .bg {
   height: 100%;
