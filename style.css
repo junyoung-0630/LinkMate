@@ -153,7 +153,7 @@ main {
 }
 
 .inner {
-  width: 1100px;
+  max-width: 1100px;
   margin: 0 auto;
   /*-------------------------------------------mate-------------------------------------------------------------*/
   /*--------------------------------standard------------------------------------------------------------------------------------------------------------*/
@@ -341,7 +341,7 @@ main {
 }
 
 .inner {
-  width: 1100px;
+  max-width: 1100px;
   /*----------------------------------------------process-----------------------------------------------------------------------------------*/
   /*--------------------------------------------------------meet------------------------------------------------------------------------------------*/
 }
@@ -658,4 +658,70 @@ footer .ft2 {
   align-items: center;
   padding: 30px 0 0 0;
   text-align: left;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------*/
+/*Device-width:0~768px(mobile)*/
+@media (max-width: 412px) {
+  header {
+    position: relative;
+    width: 100%;
+    height: 120px;
+  }
+  header .header_top {
+    padding-bottom: 20px;
+    display: flex;
+  }
+  header .logo {
+    transform: translateX(-50%);
+    left: 50%;
+    padding: 15px 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: auto;
+  }
+  header .logo img {
+    width: 70%;
+    height: auto;
+  }
+  header .header_menu {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    display: none;
+    gap: 0;
+  }
+  header .header_menu .burger {
+    align-self: flex-end;
+  }
+  header .header_menu a {
+    margin: 0;
+    left: 50px;
+  }
+  .main_bg {
+    height: 150px;
+    margin-top: 100px;
+  }
+  .main_bg .bg-video {
+    width: 100%;
+    height: 300px;
+  }
+  .main_bg h1 {
+    font-weight: 500;
+    font-size: 25px;
+    color: #fff;
+    top: 150px;
+  }
+  .main_bg h3 {
+    display: none;
+  }
+  .inner {
+    position: relative;
+  }
+  .inner h2 {
+    margin: 0 auto;
+    position: absolute;
+    align-items: center;
+  }
 }/*# sourceMappingURL=style.css.map */

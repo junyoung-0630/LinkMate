@@ -34,7 +34,6 @@
         <div class="main_bg">
             <video autoplay muted loop playsinline class="bg-video">
                 <source src="./image/시퀀스 01.mp4" type="video/mp4">
-                해당 브라우저는 비디오 태그를 지원하지 않습니다.
             </video>
             <h1>“잘 맞는 사람,<br>억지로 만들지 않아요”</h1>
             <h3>"억지스러운 끼워맞추기가 아닌, 알고리즘이 찾아낸 높은 확률의 설렘."</h3>
@@ -515,6 +514,29 @@
                 }
             );
             //------------------------------------------------------------------------------------------------------------------------
+            gsap.fromTo(".meet",
+                {
+                    y: 150,         // 150px 아래에서 출발
+                    opacity: 0      // 투명한 상태로 대기
+                },
+                {
+                    scrollTrigger: {
+                        trigger: ".meet_box", // safety_image 박스가 보일 때 시작
+                        start: "top 85%",        // 화면 85% 지점에 닿으면 실행
+                        toggleActions: "play none none reverse",
+                        markers: false           // 잘 작동하면 false, 확인하고 싶으면 true
+                    },
+                    y: 0,           // 원래 자리로
+                    opacity: 1,     // 선명하게 나타남
+                    duration: 2,    // 1초 동안 부드럽게
+                    ease: "power3.out",
+                    stagger: 0      // 0으로 설정해서 3개가 '동시에' 올라오게 함
+                }
+            );
+
+
+
+//---------------------------------------------------------------------------------
             gsap.fromTo(".safety_image img",
                 {
                     y: 150,         // 150px 아래에서 출발
