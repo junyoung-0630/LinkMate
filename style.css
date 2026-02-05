@@ -55,6 +55,10 @@ header .header_menu {
   gap: 20px;
   align-items: center;
 }
+header .header_menu .text_menu {
+  display: flex;
+  gap: 10px;
+}
 header .header_menu a {
   display: flex;
   align-items: center;

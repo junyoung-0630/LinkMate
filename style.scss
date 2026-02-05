@@ -63,6 +63,11 @@ header {
         display: flex;
         gap: 20px;
         align-items: center;
+        .text_menu{
+            display: flex;
+            gap: 10px;
+        }
+        
 
         a {
             display: flex;
@@ -835,6 +840,9 @@ footer .ft2 {
 
 }
 /*------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
 
 /*Device-width:0~768px(mobile)*/
 @media (max-width:412px){
