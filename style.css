@@ -110,7 +110,7 @@ header .burger::after {
   border-radius: 10px;
 }
 
-/*-----------------------------header------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------main------------------------------------------------------------------------------------------------------------*/
 main {
   width: 100%;
 }
@@ -129,33 +129,81 @@ main {
   margin-bottom: 150px;
 }
 .main_bg .bg-video {
-  width: 100%;
+  width: 40%;
   position: absolute;
   height: 650px;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 30px;
+  left: 10%;
 }
-.main_bg h1 {
-  font-weight: 500;
-  font-size: 55px;
-  color: #fff;
-  text-align: center;
-  padding-bottom: 150px;
-  position: relative;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4509803922);
-  top: 200px;
+.main_bg div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 80%;
+  z-index: 0;
+  background: radial-gradient(circle, rgba(250, 152, 169, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
+  pointer-events: none;
+}
+.main_bg .gr1 {
+  position: absolute;
+  top: 50%;
+  left: 87%;
+}
+.main_bg .gr2 {
+  position: absolute;
+  top: 90%;
+  left: 70%;
+  z-index: 0;
+  background: radial-gradient(circle, rgba(235, 99, 240, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
+}
+.main_bg .gr3 {
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  width: 50%;
+  background: radial-gradient(circle, rgba(141, 49, 216, 0.15) 0%, rgba(255, 255, 255, 0) 50%);
 }
 .main_bg h3 {
   font-weight: 500;
   font-size: 23px;
-  color: #fff;
+  color: #000;
   text-align: center;
   position: relative;
-  top: -80px;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4509803922);
-  top: 110px;
+  top: -13%;
+  right: -22%;
 }
 
+h1 {
+  font-weight: 500;
+  font-size: 55px;
+  color: #000;
+  text-align: center;
+  padding-bottom: 150px;
+  position: relative;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4509803922);
+  top: -3%;
+  right: -22%;
+}
+
+/**.main_bg::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: radial-gradient(circle,
+            rgba(255, 192, 203, 0.8) 0%,
+            rgba(255, 255, 255, 0) 50%);
+    pointer-events: none;
+}**/
 .inner {
   max-width: 1100px;
   margin: 0 auto;
@@ -511,16 +559,22 @@ main {
 }
 .inner .process_step2 .heart_svg {
   position: absolute;
-  top: 140px; /* 👈 카드 사이 적절한 높이로 조절 */
-  left: -150px; /* 👈 카드 사이 가로 위치 조절 */
-  width: 200px; /* 피그마에서 본 사이즈대로 */
+  top: 140px;
+  /* 👈 카드 사이 적절한 높이로 조절 */
+  left: -150px;
+  /* 👈 카드 사이 가로 위치 조절 */
+  width: 200px;
+  /* 피그마에서 본 사이즈대로 */
   z-index: 5;
 }
 .inner .process_step2 .heart2_svg {
   position: absolute;
-  top: 270px; /* 👈 카드 사이 적절한 높이로 조절 */
-  left: 110px; /* 👈 카드 사이 가로 위치 조절 */
-  width: 200px; /* 피그마에서 본 사이즈대로 */
+  top: 270px;
+  /* 👈 카드 사이 적절한 높이로 조절 */
+  left: 110px;
+  /* 👈 카드 사이 가로 위치 조절 */
+  width: 200px;
+  /* 피그마에서 본 사이즈대로 */
   z-index: 5;
 }
 .inner .process_step2 .step_img2 img:nth-child(1) {

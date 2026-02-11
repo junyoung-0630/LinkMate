@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Ria', sans-serif;
-    
+
 
 
 }
@@ -27,6 +27,7 @@
     font-weight: 900;
     font-display: swap;
 }
+
 @font-face {
     font-family: 'Pretendard';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
@@ -63,11 +64,12 @@ header {
         display: flex;
         gap: 20px;
         align-items: center;
-        .text_menu{
+
+        .text_menu {
             display: flex;
             gap: 10px;
         }
-        
+
 
         a {
             display: flex;
@@ -129,11 +131,10 @@ header {
     }
 }
 
-/*-----------------------------header------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------main------------------------------------------------------------------------------------------------------------*/
 main {
     width: 100%;
 }
-
 
 
 .main_bg {
@@ -148,46 +149,123 @@ main {
     align-items: center;
     text-align: center;
     margin-bottom: 150px;
-    .bg-video{
-        width: 100%;
+
+    .bg-video {
+        width: 40%;
         position: absolute;
         height: 650px;
         object-fit: cover;
+        border-radius: 30px;
+        left: 10%;
     }
 
-
-    h1 {
-        font-weight: 500;
-        font-size: 55px;
-        color: #fff;
-        text-align: center;
-        padding-bottom: 150px;
-        position: relative;
-        text-shadow: 1px 1px 1px #00000073;
-        top: 200px;
-
+    div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+        height: 80%;
+        z-index: 0;
+        background: radial-gradient(circle,
+                rgba(250, 152, 169, 0.15) 0%,
+                rgba(255, 255, 255, 0) 50%);
+        pointer-events: none;
     }
 
-    h3 {
-        font-weight: 500;
-        font-size: 23px;
-        color: #fff;
-        text-align: center;
-        position: relative;
-        top: -80px;
-        text-shadow: 1px 1px 1px #00000073;
-        top: 110px;
-
+    .gr1 {
+        position: absolute;
+        top: 50%;
+        left: 87%;
     }
+
+    .gr2 {
+        position: absolute;
+        top: 90%;
+        left: 70%;
+        z-index: 0;
+        background: radial-gradient(circle,
+                rgba(235, 99, 240, 0.15) 0%,
+                rgba(255, 255, 255, 0) 50%);
+    }
+
+    .gr3 {
+        position: absolute;
+        top: 30%;
+        left: 60%;
+        width: 50%;
+        background: radial-gradient(circle,
+                rgba(141, 49, 216, 0.15) 0%,
+                rgba(255, 255, 255, 0) 50%);
+    }
+
+h3 {
+    font-weight: 500;
+    font-size: 23px;
+    color: #000;
+    text-align: center;
+    position: relative;
+    text-shadow: 1px 1px 1px #00000073;
+    top: -13%;
+    right: -22%;
+
 }
+
+
+
+
+
+}
+
+
+
+
+
+h1 {
+    font-weight: 500;
+    font-size: 55px;
+    color: #000;
+    text-align: center;
+    padding-bottom: 150px;
+    position: relative;
+    text-shadow: 1px 1px 1px #00000073;
+    top: -3%;
+    right: -22%;
+
+}
+
+
+
+
+
+/**.main_bg::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background: radial-gradient(circle,
+            rgba(255, 192, 203, 0.8) 0%,
+            rgba(255, 255, 255, 0) 50%);
+    pointer-events: none;
+}**/
+
+
+
+
 
 .inner {
     max-width: 1100px;
     margin: 0 auto;
+    
 
     h2 {
         background: url(./image/underlinered.png) no-repeat left bottom;
         padding-bottom: 5px;
+        
     }
 
     .why {
@@ -581,7 +659,7 @@ main {
         max-width: 1100px;
         margin: 0 auto;
         position: relative;
-        
+
 
         .step_text2 {
             text-align: left;
@@ -645,44 +723,56 @@ main {
         }
 
         .heart_svg {
-    position: absolute;
-    top: 140px;  /* 👈 카드 사이 적절한 높이로 조절 */
-    left: -150px; /* 👈 카드 사이 가로 위치 조절 */
-    width: 200px; /* 피그마에서 본 사이즈대로 */
-    z-index: 5;
-}
+            position: absolute;
+            top: 140px;
+            /* 👈 카드 사이 적절한 높이로 조절 */
+            left: -150px;
+            /* 👈 카드 사이 가로 위치 조절 */
+            width: 200px;
+            /* 피그마에서 본 사이즈대로 */
+            z-index: 5;
+        }
+
         .heart2_svg {
-    position: absolute;
-    top: 270px;  /* 👈 카드 사이 적절한 높이로 조절 */
-    left: 110px; /* 👈 카드 사이 가로 위치 조절 */
-    width: 200px; /* 피그마에서 본 사이즈대로 */
-    z-index: 5;
-}
+            position: absolute;
+            top: 270px;
+            /* 👈 카드 사이 적절한 높이로 조절 */
+            left: 110px;
+            /* 👈 카드 사이 가로 위치 조절 */
+            width: 200px;
+            /* 피그마에서 본 사이즈대로 */
+            z-index: 5;
+        }
 
 
         .step_img2 img:nth-child(1) {
             position: absolute;
-            top: 150px; left: -230px;
+            top: 150px;
+            left: -230px;
         }
 
         .step_img2 img:nth-child(2) {
             position: absolute;
-            top: 140px; left: -45px;
+            top: 140px;
+            left: -45px;
         }
 
         .step_img2 img:nth-child(3) {
             position: absolute;
-            top: 5px; left: 160px;
+            top: 5px;
+            left: 160px;
         }
 
         .step_img2 img:nth-child(4) {
             position: absolute;
-            top: 285px; left: 225px;
+            top: 285px;
+            left: 225px;
         }
 
         .step_img2 img:nth-child(5) {
             position: absolute;
-            top: 75px; left: 405px;
+            top: 75px;
+            left: 405px;
         }
 
         span {
@@ -788,7 +878,7 @@ footer {
 
     .bg {
         height: 100%;
-        background: #FFF5F9;      
+        background: #FFF5F9;
     }
 
 
@@ -839,20 +929,25 @@ footer .ft2 {
     text-align: left;
 
 }
+
 /*------------------------------------------------------------------------------------------------------------------------------------*/
 
 
 
 
 /*Device-width:0~768px(mobile)*/
-@media (max-width:412px){
-    header{
-        position: relative; width: 100%; height: 120px;
-        .header_top{
+@media (max-width:412px) {
+    header {
+        position: relative;
+        width: 100%;
+        height: 120px;
+
+        .header_top {
             padding-bottom: 20px;
             display: flex;
         }
-        .logo{
+
+        .logo {
             transform: translateX(-50%);
             left: 50%;
             padding: 15px 0;
@@ -861,49 +956,64 @@ footer .ft2 {
             justify-content: center;
             width: auto;
         }
-        .logo img{
+
+        .logo img {
             width: 70%;
             height: auto;
         }
-        .header_menu{
+
+        .header_menu {
             display: flex;
             width: 100%;
             flex-direction: column;
             display: none;
-            
+
             gap: 0;
-            .burger{
+
+            .burger {
                 align-self: flex-end;
-                
+
             }
         }
-        .header_menu a{
-            margin:0;
+
+        .header_menu a {
+            margin: 0;
             left: 50px;
         }
-    }//e:header
-    .main_bg{
-         height: 150px;
-         margin-top: 100px;
-        .bg-video{
-            width: 100%; height: 300px;
+    }
+
+    //e:header
+    .main_bg {
+        height: 150px;
+        margin-top: 100px;
+
+        .bg-video {
+            width: 100%;
+            height: 300px;
         }
-        h1{
+
+        h1 {
             font-weight: 500;
             font-size: 25px;
             color: #fff;
             top: 150px;
         }
-        h3{
+
+        h3 {
             display: none;
         }
-    }//e:.main_bg
-    .inner{
+    }
+
+    //e:.main_bg
+    .inner {
         position: relative;
-        h2{
+
+        h2 {
             margin: 0 auto;
             position: absolute;
             align-items: center;
         }
     }
-}//e:media
+}
+
+//e:media
